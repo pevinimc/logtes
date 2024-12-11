@@ -53,7 +53,7 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
-  if (!username || não password) {
+  if (!username || !password) {
     return res.status(400).send('Campos obrigatórios faltando.');
   }
 
