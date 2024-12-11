@@ -55,7 +55,7 @@ app.post('/login', async (req, res) => {
   console.log('Body recebido no /login:', req.body); // Log para verificar o corpo da requisição
   const { username, password } = req.body;
 
-  if (!username || não password) {
+  if (!username || !password) {
     return res.status(400).send('Campos obrigatórios faltando.');
   }
 
