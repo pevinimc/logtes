@@ -1,36 +1,6 @@
-require('dotenv').config(); // Carrega variáveis de ambiente do arquivo .env
-
-const express = require('express');
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Middlewares
-app.use(express.json());
-
-// Conectar ao MongoDB
-const mongoURI = process.env.DATABASE_URL;
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
-  console.log('Conectado ao MongoDB!');
-}).catch(err => {
-  console.error('Erro ao conectar ao MongoDB', err);
-});
-
-// Modelo de Usuário
-const userSchema = new mongoose.Schema({
-  username: String,
-  password: String,
-});
-
-const User = mongoose.model('User', userSchema);
-
 // Rota de Registro
 app.post('/register', async (req, res) => {
+  console.log('Body recebido no /register:', req.body); // Log para verificar o corpo da requisição
   const { username, password } = req.body;
 
   if (!username || !password) {
@@ -51,6 +21,7 @@ app.post('/register', async (req, res) => {
 
 // Rota de Login
 app.post('/login', async (req, res) => {
+  console.log('Body recebido no /login:', req.body); // Log para verificar o corpo da requisição
   const { username, password } = req.body;
 
   if (!username || !password) {
@@ -70,8 +41,4 @@ app.post('/login', async (req, res) => {
   }
 
   res.status(200).send('Login bem-sucedido!');
-});
-
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
 });
