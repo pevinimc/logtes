@@ -7,16 +7,9 @@
     "start": "node src/index.js"
   },
   "dependencies": {
-<<<<<<< HEAD
     "bcryptjs": "^2.4.3",
     "dotenv": "^10.0.0",
     "express": "^4.21.2",
     "mongoose": "^5.13.22"
-=======
-    "express": "^4.17.1",
-    "mongoose": "^5.12.3",
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^10.0.0"
->>>>>>> e1ead77cf8a1927ca9edff9fcd0bbed7cebaedd1
   }
 }
