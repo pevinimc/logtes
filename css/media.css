@@ -1,10 +1,15 @@
-/* Adicione aqui os estilos responsivos para seu site */
-@media (max-width: 600px) {
-  #container {
-    padding: 10px;
-  }
+@media (min-width: 1024px) {
+        #container {
+            width: 902px;
+            justify-content: space-between;
+        }  
 
-  .box-login {
-    padding: 15px;
-  }
+            #container .banner {
+                display: flex;
+            }
+
+            #container .box-login {
+                width: 385px;
+                border-radius: 10px 10px 10px 0px;
+            }
 }

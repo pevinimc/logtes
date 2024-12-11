@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 require('dotenv').config(); // Carrega variáveis de ambiente do arquivo .env
-=======
-require('dotenv').config(); // Adicione isso no topo do seu arquivo
->>>>>>> e1ead77cf8a1927ca9edff9fcd0bbed7cebaedd1
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -19,13 +15,10 @@ const mongoURI = process.env.DATABASE_URL;
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
-<<<<<<< HEAD
 }).then(() => {
   console.log('Conectado ao MongoDB!');
 }).catch(err => {
   console.error('Erro ao conectar ao MongoDB', err);
-=======
->>>>>>> e1ead77cf8a1927ca9edff9fcd0bbed7cebaedd1
 });
 
 // Modelo de Usuário
@@ -44,10 +37,6 @@ app.post('/register', async (req, res) => {
     return res.status(400).send('Campos obrigatórios faltando.');
   }
 
-<<<<<<< HEAD
-=======
-  // Hash da senha
->>>>>>> e1ead77cf8a1927ca9edff9fcd0bbed7cebaedd1
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const newUser = new User({ username, password: hashedPassword });
@@ -64,11 +53,7 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
-<<<<<<< HEAD
-  if (!username ou não password) {
-=======
-  if (!username || !password) {
->>>>>>> e1ead77cf8a1927ca9edff9fcd0bbed7cebaedd1
+  if (!username || não password) {
     return res.status(400).send('Campos obrigatórios faltando.');
   }
 
