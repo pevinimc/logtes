@@ -1,3 +1,5 @@
+require('dotenv').config(); // Adicione isso no topo do seu arquivo
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
