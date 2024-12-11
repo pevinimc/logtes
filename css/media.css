@@ -1,0 +1,10 @@
+/* Adicione aqui os estilos responsivos para seu site */
+@media (max-width: 600px) {
+  #container {
+    padding: 10px;
+  }
+
+  .box-login {
+    padding: 15px;
+  }
+}
