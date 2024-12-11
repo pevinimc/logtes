@@ -12,6 +12,12 @@ app.use(express.json());
 
 // Conectar ao MongoDB
 const mongoURI = process.env.DATABASE_URL;
+
+if (!mongoURI) {
+  console.error('A variável DATABASE_URL não está definida no arquivo .env.');
+  process.exit(1);
+}
+
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
